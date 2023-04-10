@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter Employe</title>
+  <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+  <script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div th:replace="template"></div>
+<div class="container mt-5">
+  <div class="card-body">
+    <form action="saveEmploye" method="post">
+      <div class="form-group">
+        <label class="control-label">Nom Employe :</label>
+        <input type="text" name="nomEmploye" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Salaire :</label>
+        <input type="text" name="Salaire" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label class="control-label">date recrutement :</label>
+        <input type="date" name="date" class="form-control"/>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </div>
+    </form>
+  </div>
+  <p th:text="${msg}"></p>
+  <br/>
+  <br/>
+  <a href="ListeEmployes">Liste Employes</a>
+</div>
+</body>
+</html>
